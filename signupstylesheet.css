@@ -1,0 +1,68 @@
+html{
+    background-color: black;
+    background-size: 100% 100%;
+}
+
+body{
+    margin: 0px;
+}
+
+#left{
+    background-image: url('Pictures/sidebars.jpg');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 13.5%;
+    position: fixed;
+    left: 0%;
+}
+
+#right{
+    background-image: url('Pictures/sidebars.jpg');
+    background-size: 100% 100%;
+    height: 100%;
+    width: 13.5%;
+    position: fixed;
+    right: 0%;
+}
+
+#center{
+    width: 72.75%;
+    min-height: 100%;
+    position: absolute;
+    left: 13.5%;
+    border-left: 2px solid silver;
+    border-right: 2px solid silver;
+    background-color: #9e7e38;
+}
+#headline{
+    text-align: center;
+    position: relative;
+    font-size: 60px;
+    margin: 5px;
+    font-family: serif;
+}
+
+legend{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input{
+    font-size: 14px;
+}
+.influence{
+    width: 30%;
+}
+
+.text{
+    background-color: silver;
+    width: 30%;
+}
+
+#submit{
+    align-items: center;
+}
+#submitbutton{
+    width: 15%;
+    height: 20px;
+}

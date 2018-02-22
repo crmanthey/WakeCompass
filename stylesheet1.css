@@ -1,0 +1,349 @@
+html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    min-width: 1300px;
+}
+
+body{
+    height: 100%;
+    width: 100%;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    overflow: auto;
+    background-color: #f0f0f0;
+}
+
+#leftMargin{
+    align-content: center;
+    width:15%;
+    height: 100%;
+    background: #9e7e38; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%);
+    display: inline-block;
+    position: sticky;
+    top: 0%;
+    left: 0%;
+}
+
+#middleOfPage{
+    margin-left: 0px;
+    padding-left: 0px;
+    height: 100%;
+    width: 69.7%;
+    display: inline-block;
+    background-color: white;
+    position: relative;
+}
+
+#tab {
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    z-index: 1;
+    width: 100%;
+    background-color: #777777;
+}
+
+#buttons{
+    float: right;
+}
+
+/* Style the buttons inside the tab */
+#tab button {
+    background-color: silver;
+    border: 1px solid black;
+    outline: none;
+    cursor: pointer;
+    transition: 0.25s;
+    font-size: 18px;
+    float: left;
+    font-family:serif;
+    border-radius: 5px;
+}
+
+/* Change background color of buttons on hover */
+#tab button:hover {
+    background-color: slategray;
+}
+
+#tab button:focus{
+    background-color: darkslategrey;
+    color: white;
+}
+
+#search{
+    font-size: 16px;
+    width: 205px;
+}
+
+/* Style the tab content */
+.tabcontent {
+    position: absolute;
+    top: 3.8%;
+    border-top: none;
+    width: 100%;
+    height: 100%;
+}
+
+#Profile{
+    background-color: #f0f0f0;
+}
+
+#profilePic{
+    border: 5px inset #90a5be;
+    height: 250px;
+    width: 200px;
+}
+
+#Name{
+    position: absolute;
+    font-family: sans-serif;
+    left: 215px;
+    width: 460px;
+    height: 65px;
+    font-size: 5.5vw;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    top: 0%;
+    color: black;
+}
+
+#Role{
+    position: absolute;
+    font-family: sans-serif;
+    left: 215px;
+    top: 11%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    color: #9e7e38;
+/*    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;*/
+    font-size: 30px;
+}
+
+#RoleDecor{
+    position: absolute;
+    right: 3%;
+    top: 4%;
+    width: 10em;
+    height: 10em;
+}
+
+#ContactInfo{
+    background-color: #f0f0f0;
+    position: absolute;
+    top: 18%;
+    left: 215px;
+    width: 50%;
+    margin: 0px;
+}
+
+#ContactInfo p{
+    margin: 5px;
+    font-family: sans-serif;
+    font-size: .8em;
+}
+
+#ProfileContent{
+    width: 59%;
+    margin-left: 215px;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.Edit{
+    float: right;
+    border-radius: 3px;
+    background-color: #90a5be;
+    color: white;
+}
+.PersonalInfo{
+    background-color: white;
+    width: 99%;
+    text-align: left;
+    list-style-position: inside;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding-bottom: 1.2em;
+    border-left: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+}
+
+#Education{
+    border-top: 1px solid #f0f0f0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#Skills{
+    border-bottom: 1px solid #f0f0f0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.PersonalInfo ul{
+    list-style-type: none;
+    font-size: 1.1em;
+    margin: 0px;
+}
+
+.PersonalInfo li{
+    margin-top: .5em;
+}
+
+.PersonalInfo ul ul{
+    list-style-type: circle;
+    font-size: .8em;
+    color: #9e7e38;
+}
+
+.PersonalInfo h2{
+    margin-top: .2em;
+    padding-top: .5em;
+    font-size: 1.25em;
+    margin-left: 4.7%;
+    padding-bottom: 0px;
+    color: #a5a5a5;
+    text-align: left;
+    padding-left: 2%;
+    margin-bottom: 0px;
+}
+
+#Connections{
+    background-color: #f0f0f0;
+    display: none;
+}
+
+#ConnectionsHeader{
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: .25em;
+}
+
+.Connection{
+    position: relative;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 200px;
+}
+
+#ConnRoleDecor{
+    position: absolute;
+    top: 27.5%;
+    right: 5%;
+    width: 5em;
+    height: 5em;
+    float: right;
+}
+#ConnProfilePic{
+    height: 200px;
+    width: 160px;
+    top: 4px;
+}
+
+#ConnName{
+    left: 170px;
+    top: 15%;
+    margin-bottom: 5px;
+    position: absolute;
+}
+
+#ConnRole{
+    margin-top: 5px;
+    position: absolute;
+    left: 170px;
+    top: 40%;
+}
+
+#ConntactInfo{
+    position: absolute;
+    top: 8%;
+    right: 20%;
+    margin: 5px
+}
+
+#ConntactInfo p{
+    margin: 5px;
+    font-size: 1.15em;
+}
+
+#Projects{
+    background-color: whitesmoke, white;
+    display: none;
+}
+
+#ProjectsHeader{
+    font-size: 4em;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-top: .25em;
+}
+
+.Project{
+    position: relative;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    height: 150px;
+}
+
+.ProjectName{
+    left: 10px;
+    top: 15%;
+    margin-bottom: 5px;
+    position: absolute;
+}
+
+.ProjectName:hover{
+    color: blue;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.ProjectMembers{
+    margin-top: 5px;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+}
+
+.ProjectInfo{
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    margin: 5px;
+    width: 60%;
+}
+
+.ProjectInfo p{
+    margin: 5px;
+    font-size: 1.15em;
+}
+
+#rightMargin{
+    width:15%;
+    height: 100%;
+    align-content: center;
+    background: #9e7e38; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#9e7e38 1%,  #ceae78 20%, #ceae78 80%, #9e7e38 99%);
+    display: inline-block;
+    position: sticky;
+    top: 0%;
+    right: 0%;
+}
+
+#logout{
+    float: right;
+    border-radius: 5px;
+    font-size: 18px;
+    z-index: 4;
+    color: #9e7e38;
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile Design</title>
+        <link type="text/css" rel="stylesheet" href="stylesheet1.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="PageFunction.js"></script>
+    </head>
+    <body>
+        <div id="leftMargin"></div><!--
+     --><div id="middleOfPage">
+            <div id="tab">
+                <input id= "search" type="text" name="search" placeholder="Search">
+                <div id="buttons">
+                    <button id='Profilebutton' class="active" onclick="openPage(event, 'Profile')">Profile</button>
+                    <button id='Connectionsbutton' class="tablink" onclick="openPage(event, 'Connections')">Connections</button>
+                    <button id='Projectsbutton' class="tablink" onclick="openPage(event, 'Projects')">Projects</button>
+                    <button id='logout' onclick="changePage()">Log Out</button>
+                </div><!--
+         --></div><!--
+         --><div id="Profile" class="tabcontent">
+                <div id= "topper"></div>
+                <img id="profilePic" src="http://www.sbcba.ca/wp-content/uploads/2012/11/generic.png">
+                <h1 id="Name">John Doe</h1>
+                <img id="RoleDecor" src="https://image.flaticon.com/icons/png/512/106/106452.png"/>
+                <h3 id="Role">Emergency Medicine Physician</h3>
+                <div id="ContactInfo">
+                    <p id="Email"><strong>Email:</strong> johndoe@gmail.com</p>
+                    <p id="Age"><strong>Age:</strong> 29</p>
+                    <p id="Gender"><strong>Gender:</strong> Male</p>
+                    <p id="Hometown"><strong>From:</strong> Winston-Salem, NC</p>
+                    <p id="Languages"><strong>Languages:</strong> English, French</p>
+                    <p id="Specialty"><strong>Desired Specialty:</strong> Emergency Medicine</p>
+                </div>
+                <div id="ProfileContent">
+                    <div class="PersonalInfo" id="Education">
+                        <button class="Edit" onclick="">Edit</button>
+                        <h2>Education</h2><!--
+                     --><ul><!--
+                         --><li>Undergraduate: John's Hopkins</li>
+                                <ul>
+                                    <li>Graduation Year: 2010</li>
+                                    <li>Major: Biology</li>
+                                </ul>
+                                
+                            <li>Wake Forest Medical School</li>
+                                <ul><li>Graduation Year: 2017</li></ul>
+                        </ul>
+                    </div>
+                    <div class="PersonalInfo" id="Work">
+                        <h2>Work Experience</h2>
+                        <ul>
+                            <li>Wake Forest University EMS</li>
+                                <ul>
+                                    <li>Spring 2015 - Present</li>
+                                </ul>
+                            <li>John Hopkins Undergraduate TA</li>
+                                <ul>
+                                    <li>Fall 2008 - Spring 2010</li>
+                                </ul>
+                        </ul>
+                    </div>
+                    <div class="PersonalInfo" id="Interests">
+                        <h2>Interests</h2>
+                        <ul>
+                            <li>Clinical</li>
+                                <ul>
+                                    <li>Pathology, Internal Medicine</li>
+                                </ul>
+                            <li>Academic</li>
+                                <ul>
+                                    <li>Economics, Literature, Engineering</li>
+                                </ul>
+                            <li>Extracurricular</li>
+                                <ul>
+                                    <li>Performing Arts, Traveling, Gaming</li>
+                                </ul>
+                        </ul>
+                    </div>
+                    <div class="PersonalInfo" id="Skills">
+                        <h2>Skills</h2>
+                        <ul>
+                            <li>Clinical</li>
+                                <ul>
+                                    <li>Phlebotomy and Patient Interviews</li>
+                                </ul>
+                            <li>Research</li>
+                                <ul>
+                                    <li>Molecular Biology Techniques, Cell Culture, Bioengineering</li>
+                                </ul>
+                            <li>Computer Science</li>
+                                <ul>
+                                    <li>Statistical Analysis and Modeling</li>
+                                </ul>
+                            <li>Other</li>
+                                <ul>
+                                    <li>Scientific Writing</li>
+                                </ul>
+                        </ul>
+                    </div>
+                </div> <br><br>
+                </div><!--
+         --><div id="Connections" class="tabcontent">
+                <h1 id="ConnectionsHeader">Connections</h1>
+                <div class="Connection">
+                    <img id="ConnRoleDecor" src="https://maxcdn.icons8.com/Share/icon/Business//graduation_cap1600.png"/>
+                    <img id="ConnProfilePic" src="http://www.sbcba.ca/wp-content/uploads/2012/11/generic.png"/>
+                    <h1 id="ConnName">Jane Doe</h1>
+                    <h3 id="ConnRole">2nd Year Med Student</h3>
+                    <div id="ConntactInfo">
+                        <p id="Email"><strong>Email:</strong> janedoe@gmail.com</p>
+                        <p id="Age"><strong>Age:</strong> 25</p>
+                        <p id="Gender"><strong>Gender:</strong> Female</p>
+                        <p id="Hometown"><strong>From:</strong> Winston-Salem, NC</p>
+                        <p id="Languages"><strong>Languages:</strong> English, Italian, Spanish</p>
+                        <p id="Specialty"><strong>Desired Specialty:</strong> Cardiothoracic Surgery</p>
+                    </div>
+                </div>
+            </div><!--
+         --><div id="Projects" class="tabcontent">
+                <h1 id="ProjectsHeader">Projects</h1>
+                <div class="Project">
+                    <h1 class="ProjectName" onclick="expand()">Wake Compass</h1>
+                    <h3 class="ProjectMembers">Members: Chris, Gwen, Iltifat</h3>
+                    <div class="ProjectInfo">
+                        <p><strong>Project Description:</strong> Web platform designed to connect mentors and mentees involved with
+                            Wake Forest Medical School.</p>
+                        <p><strong>Start Date:</strong> July, 2017</p>
+                        <p><strong>End Date:</strong> TBD</p>
+                    </div>
+                </div>
+            </div>
+        </div><!--
+     --><div id="rightMargin">
+        </div>
+    </body>
+</html>

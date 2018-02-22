@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Wake Compass Questionnaire</title>
+        <link type='text/css' rel='stylesheet' href='signupstylesheet.css'>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="questionnaire.js"></script>
+    </head>
+    <body>
+        <div id='left'></div>
+        <div id='center'>
+            <h1 id='headline'>Wake Compass Questionnaire</h1>
+            <form id="ProfileForm">
+               <!-- Use these as templates
+                <fieldset>
+                   <legend></legend>
+               </fieldset>                                      SECTION MARKERS
+
+                <input type="radio" name="">                    RADIO
+
+                <input type="text" name="">                     TEXT
+
+                <textarea name=""></textarea>                   TEXTAREA (rows/columns are options)
+               
+                <select name="">
+                   <option value=""></option>
+               </select>                                        DROP DOWN lIST (size/multiple are options)
+            -->
+                <fieldset>
+                    <legend>Personal Info</legend>
+                    Name:<br>
+                    <input class="text" type="text" name="name"><br><br>
+                    Email Address: <br>
+                    <input class="text" type="text" name="email"><br><br>
+                    Role:<br>
+                    <input type="radio" name="role" value="student"> Student
+                    <input type="radio" name="role" value="faculty"> Faculty
+                    <input type="radio" name="role" value="staff"> Staff
+                    <input type="radio" name="role" value="alumni"> Alumni<br>
+                </fieldset> 
+                <br>
+               <fieldset>
+                    <legend>Demographics</legend>
+                    MD Graduation Year<br>
+                    <select name="gradyear">
+                        <option value="2017">2017</option>
+                        <option value="2018">2018</option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    Where did you grow up? state (if in US), country otherwise<br>
+                    <input class="text" type="text" name="hometown"><br><br>
+                    In what type of environment did you grow up? (ie. urban, suburban, rural)<br>
+                    <input class="text" type="text" name="homeEnvironment"><br><br>
+                    How much does where you grew up influence your interpersonal interactions now?<br><br>
+                    <input class="influence" type="range" name="homeInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amount.value=homeInfluence.value">                                                       
+                    <output name="amount" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                </fieldset>               
+                <br>
+                <fieldset>
+                    <legend>Education</legend>
+                    What degrees do you have? Pleas select all that apply<br>
+                    <input type="checkbox" name="degrees[]" value="Undergraduate">Undergraduate
+                    <input type="checkbox" name="degrees[]" value="Post-bac">Post-bac
+                    <input type="checkbox" name="degrees[]" value="Masters Degree">Masters Degree
+                    <input type="checkbox" name="degrees[]" value="Doctorate">Doctorate
+                    <input type="checkbox" name="degrees[]" value="Other">Other<br><br>
+                    What institution did you attend for your undergraduate education?<br>
+                    <input class="text" type="text" name="school"><br><br>
+                    If you completed post-grad work, where did you attend?<br>
+                    <input class="text" type="text" name="gradschool"><br><br>
+                    How much does where you obtained your education influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="schoolInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountedu.value=schoolInfluence.value">                                                       
+                    <output name="amountedu" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    What was your undergraduate major?<br>
+                    <input class="text" type="text" name="major"><br><br>
+                    How much does what you studied in your undergraduate education influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="majorInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountmajor.value=majorInfluence.value">                                                       
+                    <output name="amountmajor" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    What kinds of activities did you participate in during your undergaruate education? (select all that apply)<br>
+                    <input type="checkbox" name="activities" value="Athlete">College Athletics
+                    <input type="checkbox" name="activities" value="Intramurals">Intramural Athletics
+                    <input type="checkbox" name="activities" value="Politics">Politics and Public Policy
+                    <input type="checkbox" name="activities" value="Debate">Debate
+                    <input type="checkbox" name="activities" value="GreekLife">Greek Life
+                    <input type="checkbox" name="activities" value="Visual Art">Visual Art
+                    <input type="checkbox" name="activities" value="Performing Art">Performing Art
+                    <input type="checkbox" name="activities" value="Music">Music<br>
+                    <input type="checkbox" name="activities" value="Journalism">Journalism and Writing
+                    <input type="checkbox" name="activities" value="Volunteering">Volunteering
+                    <input type="checkbox" name="activities" value="Clinical Work">Clinical Work/Shadowing
+                    <input type="checkbox" name="activities" value="Work">Paid Work
+                    <input type="checkbox" name="activities" value="Research">Research
+                    <input type="checkbox" name="activities" value="Teaching">Teaching/Tutoring
+                    <input type="checkbox" name="activities" value="Technology">Technology
+                    <input type="checkbox" name="activities" value="ROTC">ROTC<br>
+                    <input type="checkbox" name="activities" value="Social Physical Activity">Social Physical Activity
+                    <input type="checkbox" name="activities" value="Other">Other<br><br>
+                    What was your most important activity (specify)<br>
+                    <input class="text" type="text" name="Activity"><br><br>
+                    How much do the above activities influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="activityInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountactivity.value=activityInfluence.value">                                                       
+                    <output name="amountactivity" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    Do you consider yourself a non-traditional student?<br>
+                    <input type="radio" name="studentType" value="Yes">Yes
+                    <input type="radio" name="studentType" value="No">No<br><br>
+                    Did you take an interval between undergraduate and medical school? (radio) <br>
+                    <input type="radio" name="gapyear" value="Yes">Yes
+                    <input type="radio" name="gapyear" value="No">No<br><br>
+                    If yes to the question above, what did you do before coming to medical school?<br>
+                    <input class="text" type="text" name="gapyearactivity"><br><br>
+                    If you took an interval before coming to medical school, how much do the activities influence your interpersonal interactions now? (radio) <br>     
+                    <input class="influence" type="range" name="gapyearInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountgap.value=gapyearInfluence.value">                                                       
+                    <output name="amountgap" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>About Me</legend>
+                    What is your gender?<br>
+                    <input type="radio" name="gender" value="Male">Male
+                    <input type="radio" name="gender" value="Female">Female
+                    <input type="radio" name="gender" value="Transgender">Transgender
+                    <input type="radio" name="gender" value="Intersex">Intersex
+                    <input type="radio" name="gender" value="Non-conforming">Gender Non-conforming
+                    <input type="radio" name="gender" value="No Answer">Prefer Not to Answer<br><br>
+                    How much does your gender identity influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="genderInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountgender.value=genderInfluence.value">                                                       
+                    <output name="amountgender" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    How do you self identify?<br>
+                    <input type="radio" name="race" value="Asian">Asian
+                    <input type="radio" name="race" value="Black">Black
+                    <input type="radio" name="race" value="Latino">Hispanic, Latino
+                    <input type="radio" name="race" value="Native American">Native American/American Indian
+                    <input type="radio" name="race" value="Pacific Islander">Native Hawaiian/Pacific Islander
+                    <input type="radio" name="race" value="South Asian">South Asian
+                    <input type="radio" name="race" value="No Answer">Prefer Not to Answer<br><br>
+                    How much does your race/ethnicity influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="raceInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountrace.value=raceInfluence.value">                                                       
+                    <output name="amountrace" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    What languages do you speak? (select all that apply)<br>
+                    <input type="checkbox" name="language" value="English">English
+                    <input type="checkbox" name="language" value="Spanish">Spanish
+                    <input type="checkbox" name="language" value="French">French
+                    <input type="checkbox" name="language" value="German">German
+                    <input type="checkbox" name="language" value="Italian">Italian
+                    <input type="checkbox" name="language" value="Portuguese">Portuguese
+                    <input type="checkbox" name="language" value="Tagalog">Tagalog
+                    <input type="checkbox" name="language" value="Vietnamese">Vietnamese
+                    <input type="checkbox" name="language" value="Korean">Korean
+                    <input type="checkbox" name="language" value="Chinese">Chinese
+                    <input type="checkbox" name="language" value="Japanese">Japanese
+                    <input type="checkbox" name="language" value="Arabic">Arabic
+                    <input type="checkbox" name="language" value="Russian">Russian
+                    <input type="checkbox" name="language" value="Hindi">Hindi
+                    <input type="checkbox" name="language" value="Urdu">Urdu
+                    <input type="checkbox" name="language" value="Persian">Persian
+                    <input type="checkbox" name="language" value="Farsi">Farsi
+                    <input type="checkbox" name="language" value="Polish">Polish
+                    <input type="checkbox" name="language" value="Greek">Greek
+                    <input type="checkbox" name="language" value="Gujrati">Gujrati
+                    <input type="checkbox" name="language" value="Bengali">Bengali
+                    <input type="checkbox" name="language" value="Panjabi">Panjabi
+                    <input type="checkbox" name="language" value="Hebrew">Hebrew
+                    <input type="checkbox" name="language" value="Armenian">Armenian
+                    <input type="checkbox" name="language" value="Other">Other<br><br>
+                    What is your religious preference?<br>
+                    <input type="checkbox" name="religion" value="Christianity">Christianity
+                    <input type="checkbox" name="religion" value="Islam">Islam
+                    <input type="checkbox" name="religion" value="Judaism">Judaism
+                    <input type="checkbox" name="religion" value="Hinduism">Hinduism
+                    <input type="checkbox" name="religion" value="Buddhism">Buddhism
+                    <input type="checkbox" name="religion" value="Atheist">Atheist
+                    <input type="checkbox" name="religion" value="Agnostic">Agnostic
+                    <input type="checkbox" name="religion" value="Independent">Independently Spritual
+                    <input type="checkbox" name="religion" value="No Answer">Prefer Not to Answer<br><br>
+                    How much does your religion or spiritual practice influence your interpersonal interactions now? (0=Not Influential, 10=Extremely Influential)<br>
+                    <input class="influence" type="range" name="religionInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountreligion.value=religionInfluence.value">                                                       
+                    <output name="amountreligion" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    How would you identify your sexual orientation?<br>
+                    <input type="radio" name="sexualorientation" value="Heterosexual">Heterosexual
+                    <input type="radio" name="sexualorientation" value="Homosexual">Homosexual
+                    <input type="radio" name="sexualorientation" value="Bisexual/Pansexual">Bisexual, Pansexual
+                    <input type="radio" name="sexualorientation" value="Asexual">Asexual
+                    <input type="radio" name="sexualorientation" value="No Answer">Prefer Not to Answer<br><br>
+                    How much does your sexual orientation influence your interpersonal interactions now/ (radio) <br>
+                    <input class="influence" type="range" name="sexualorientInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountsexual.value=sexualorientInfluence.value">                                                       
+                    <output name="amountsexual" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    What is your current relationship status?<br>
+                    <input type="radio" name="relationship" value="Single">Single
+                    <input type="radio" name="relationship" value="Married">Married
+                    <input type="radio" name="relationship" value="Widowed">Widowed
+                    <input type="radio" name="relationship" value="In Relationship">In Relationship
+                    <input type="radio" name="relationship" value="No Answer">Prefer Not to Answer<br><br>
+                    How much does your relationship status influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="relationshipInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountrelationship.value=relationshipInfluence.value">                                                       
+                    <output name="amountrelationship" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                    Do you have children?<br>
+                    <input type="radio" name="children" value="Yes">Yes
+                    <input type="radio" name="children" value="No">No
+                    <input type="radio" name="children" value="In Process">In Process
+                    <input type="radio" name="children" value="Someday">Someday
+                    <input type="radio" name="children" value="Other">Other<br><br>
+                    How much does family influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="familyInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountfamily.value=familyInfluence.value">                                                       
+                    <output name="amountfamily" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                            <option value="0">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                    </datalist>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Interests- academic, clinical</legend>
+                    What is your primary specialty of interest?<br>
+                    <select name="specialty">
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Surgery">General Surgery</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Radiology">Radiology</option>
+                        <option value="OBGYN">Obstetrics and Gynecology</option>
+                        <option value="Otolaryngology">Otolaryngology</option>
+                        <option value="Opthalmology">Opthalmology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Anesthesia">Anesthesia</option>
+                        <option value="Pathology">Pathology</option>
+                        <option value="Emergency Medicine">Emergency Medicine</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Family Medicine">Family Medicine</option>
+                        <option value="Psychiatry">Psychiatry</option>
+                        <option value="Neurosurgery">Neurosurgery</option>
+                        <option value="Rehabilitation">Physical Medicine and Rehabilitation</option>
+                        <option value="Nuclear Medicine">Nuclear Medicine</option>
+                        <option value="Cardiothoracic Surgery">Cardiothoracic Surgery</option>
+                        <option value="Interventional Radiology">Interventional Radiology</option>
+                        <option value="Urology">Urology</option>
+                        <option value="Plastic Surgery">Plastic Surgery</option>
+                        <option value="Mediciine-Pediatrics">Mediciine-Pediatrics</option>
+                        <option value="Podiatry">Podiatry</option>
+                        <option value="Dentistry">Dentistry</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    Please specify if you're interested in a sub-specialty.<br>
+                    <input class="text" type="text" name="subspecialty"><br><br>
+                    If you are interested in other specialties, what are they? (Ctrl + click for multiple)<br>
+                    <select name="otherspecialties" multiple>
+                        <option value="Pediatrics">Pediatrics</option>
+                        <option value="Internal Medicine">Internal Medicine</option>
+                        <option value="Surgery">General Surgery</option>
+                        <option value="Neurology">Neurology</option>
+                        <option value="Radiology">Radiology</option>
+                        <option value="OBGYN">Obstetrics and Gynecology</option>
+                        <option value="Otolaryngology">Otolaryngology</option>
+                        <option value="Opthalmology">Opthalmology</option>
+                        <option value="Orthopedics">Orthopedics</option>
+                        <option value="Anesthesia">Anesthesia</option>
+                        <option value="Pathology">Pathology</option>
+                        <option value="Emergency Medicine">Emergency Medicine</option>
+                        <option value="Dermatology">Dermatology</option>
+                        <option value="Family Medicine">Family Medicine</option>
+                        <option value="Psychiatry">Psychiatry</option>
+                        <option value="Neurosurgery">Neurosurgery</option>
+                        <option value="Rehabilitation">Physical Medicine and Rehabilitation</option>
+                        <option value="Nuclear Medicine">Nuclear Medicine</option>
+                        <option value="Cardiothoracic Surgery">Cardiothoracic Surgery</option>
+                        <option value="Interventional Radiology">Interventional Radiology</option>
+                        <option value="Urology">Urology</option>
+                        <option value="Plastic Surgery">Plastic Surgery</option>
+                        <option value="Mediciine-Pediatrics">Mediciine-Pediatrics</option>
+                        <option value="Podiatry">Podiatry</option>
+                        <option value="Dentistry">Dentistry</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    How much does your medical specialty influence your interpersonal interactions?<br>
+                    <input class="influence" type="range" name="specialtyInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountspecialty.value=specialtyInfluence.value">                                                       
+                    <output name="amountspecialty" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                    (Student) What kind of environment would you like to work in?<br>
+                    <select name="workenvironment">
+                        <option value="AcademicInstitution">Academic Institution</option>
+                        <option value="PrivatePractice">Private Practice</option>
+                        <option value="CommunityPractice">Community Practice</option>
+                        <option value="Abroad">Institution Abroad</option>
+                        <option value="Charity">Charity Care</option>
+                        <option value="TechConsult">Technology Consulting</option>
+                        <option value="IndepConsult">Independent Consulting</option>
+                        <option value="NonClinical">Non-Clinical</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    Including your current job, what kind of environments have you worked in? <br>
+                    <select name="pastworkenvironment" multiple>
+                        <option value="AcademicInstitution">Academic Institution</option>
+                        <option value="PrivatePractice">Private Practice</option>
+                        <option value="CommunityPractice">Community Practice</option>
+                        <option value="Abroad">Institution Abroad</option>
+                        <option value="Charity">Charity Care</option>
+                        <option value="TechConsult">Technology Consulting</option>
+                        <option value="IndepConsult">Independent Consulting</option>
+                        <option value="NonClinical">Non-Clinical</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    In which environment do you primarily work?<br>
+                    <select name="currentworkenvironment">
+                        <option value="AcademicInstitution">Academic Institution</option>
+                        <option value="PrivatePractice">Private Practice</option>
+                        <option value="CommunityPractice">Community Practice</option>
+                        <option value="Abroad">Institution Abroad</option>
+                        <option value="Charity">Charity Care</option>
+                        <option value="TechConsult">Technology Consulting</option>
+                        <option value="IndepConsult">Independent Consulting</option>
+                        <option value="NonClinical">Non-Clinical</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    (Student) what type of patient population would you like to work with?<br>
+                        <input type="radio" name="patienttype" value="Urban">Urban
+                        <input type="radio" name="patienttype" value="Suburban">Suburban
+                        <input type="radio" name="patienttype" value="Rural">Rural
+                        <input type="radio" name="patienttype" value="Immigrant">Immigrant
+                        <input type="radio" name="patienttype" value="Other">Other<br><br>
+                    Including your current job what patient populations have you worked with before?<br>
+                        <input type="checkbox" name="currentpatienttype" value="Urban">Urban
+                        <input type="checkbox" name="currentpatienttype" value="Suburban">Suburban
+                        <input type="checkbox" name="currentpatienttype" value="Rural">Rural
+                        <input type="checkbox" name="currentpatienttype" value="Immigrant">Immigrant
+                        <input type="checkbox" name="currentpatienttype" value="Other">Other<br><br>
+                    How much does working in a certain clinical environment  (patient population, type of practice) influence your interpersonal interactions?<br>
+                    <input class="influence" type="range" name="environmentInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountenvironment.value=environmentInfluence.value">                                                       
+                    <output name="amountenvironment" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Interests- academic, non-clinical</legend>
+                    What kinds of other medicine-related activities do you hope to pursue in your career? (check all that apply)<br>
+                        <input type="checkbox" name="medActivity" value="R-BasicScience">Research-basic science
+                        <input type="checkbox" name="medActivity" value="R-Clinical">Research-clinical 
+                        <input type="checkbox" name="medActivity" value="R-Quality">Research-quality improvement
+                        <input type="checkbox" name="medActivity" value="R-SocialScience">Research-social science
+                        <input type="checkbox" name="medActivity" value="DrugDev">Drug Development
+                        <input type="checkbox" name="medActivity" value="Teaching">Teaching<br>
+                        <input type="checkbox" name="medActivity" value="Advocacy">Advocacy
+                        <input type="checkbox" name="medActivity" value="TechDev">Technology Development
+                        <input type="checkbox" name="medActivity" value="Administration">Hospital Administration
+                        <input type="checkbox" name="medActivity" value="Business">Business/Entrepreneurial 
+                        <input type="checkbox" name="medActivity" value="GlobalHealth">Global Health
+                        <input type="checkbox" name="medActivity" value="Charity">Charity Care<br>
+                        <input type="checkbox" name="medActivity" value="PublicHealth">Public Policy/Health 
+                        <input type="checkbox" name="medActivity" value="Volunteering">Volunteering
+                        <input type="checkbox" name="medActivity" value="Other">Other<br><br>
+                    What kinds of other medicine-related activities do you engage in? (check all that apply)<br>
+                        <input type="checkbox" name="currentmedActivity" value="R-BasicScience">Research-basic science
+                        <input type="checkbox" name="currentmedActivity" value="R-Clinical">Research-clinical 
+                        <input type="checkbox" name="currentmedActivity" value="R-Quality">Research-quality improvement
+                        <input type="checkbox" name="currentmedActivity" value="R-SocialScience">Research-social science
+                        <input type="checkbox" name="currentmedActivity" value="DrugDev">Drug Development
+                        <input type="checkbox" name="currentmedActivity" value="Teaching">Teaching<br>
+                        <input type="checkbox" name="currentmedActivity" value="Mentorship">Mentorship                      
+                        <input type="checkbox" name="currentmedActivity" value="Advocacy">Advocacy
+                        <input type="checkbox" name="currentmedActivity" value="TechDev">Technology Development
+                        <input type="checkbox" name="currentmedActivity" value="Administration">Hospital Administration
+                        <input type="checkbox" name="currentmedActivity" value="Business">Business/Entrepreneurial 
+                        <input type="checkbox" name="currentmedActivity" value="GlobalHealth">Global Health
+                        <input type="checkbox" name="currentmedActivity" value="Charity">Charity Care<br>
+                        <input type="checkbox" name="currentmedActivity" value="PublicHealth">Public Policy/Health 
+                        <input type="checkbox" name="currentmedActivity" value="Volunteering">Volunteering
+                        <input type="checkbox" name="currentmedActivity" value="Military">Military
+                        <input type="checkbox" name="currentmedActivity" value="LegalConsult">Legal Consulting
+                        <input type="checkbox" name="currentmedActivity" value="Other">Other<br><br>
+                    What non-clinical work-related activity is most important to you?<br>
+                        <input class="text" type="text" name="medicalImportant"><br><br>
+                    How much do your work-related, non-clinical activites influence your interpersonal interactions now? (radio) <br>
+                    <input class="influence" type="range" name="medActivityInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountmedActivity.value=medActivityInfluence.value">                                                       
+                    <output name="amountmedActivity" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                </fieldset>
+                <br>
+               <fieldset>
+                    <legend>Interests- academic, non-medical</legend>
+                    Do you engage in any disciplines unrelated to medicine<br>
+                    <input type="radio" name="academicInterest" value="Yes">Yes
+                    <input type="radio" name="academicInterest" value="No">No<br><br>
+                    If so, what types of scholarship do you engage in? (select all that apply)<br>
+                    <input type="checkbox" name="scholarship" value="Languages">Languages
+                    <input type="checkbox" name="scholarship" value="Theology">Theology
+                    <input type="checkbox" name="scholarship" value="Music">Music
+                    <input type="checkbox" name="scholarship" value="Art">Art
+                    <input type="checkbox" name="scholarship" value="Economics">Economics
+                    <input type="checkbox" name="scholarship" value="Business">Business
+                    <input type="checkbox" name="scholarship" value="Literature">Literature
+                    <input type="checkbox" name="scholarship" value="Social Science">Social Science
+                    <input type="checkbox" name="scholarship" value="Politics">Politics and Public Policy
+                    <input type="checkbox" name="scholarship" value="Technology">Technology<br>
+                    <input type="checkbox" name="scholarship" value="Physics">Physics
+                    <input type="checkbox" name="scholarship" value="Chemistry">Chemistry
+                    <input type="checkbox" name="scholarship" value="Psychology">Psychology
+                    <input type="checkbox" name="scholarship" value="Biology">Biology
+                    <input type="checkbox" name="scholarship" value="Mathematics">Mathematics
+                    <input type="checkbox" name="scholarship" value="Engineering">Engineering
+                    <input type="checkbox" name="scholarship" value="History">History
+                    <input type="checkbox" name="scholarship" value="Other">Other<br><br>
+                    How much does non-medical scholarship influence your interpersonal interactions now?<br>
+                    <input class="influence" type="range" name="scholarshipInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountscholarship.value=scholarshipInfluence.value">                                                       
+                    <output name="amountscholarship" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                </fieldset>
+               <br>
+               <fieldset>
+                    <legend>Interests- Non-academic</legend>
+                    What kinds of non-academic activities do you enjoy (select all that apply) <br>
+                    <input type="checkbox" name="extracurriculars" value="Watching Sports">Watching Sports
+                    <input type="checkbox" name="extracurriculars" value="Playing Sports">Playing Sports
+                    <input type="checkbox" name="extracurriculars" value="Visual Arts">Visual Arts
+                    <input type="checkbox" name="extracurriculars" value="Performing Arts">Performing Arts
+                    <input type="checkbox" name="extracurriculars" value="Playing Music">Playing Music
+                    <input type="checkbox" name="extracurriculars" value="Concerts">Concerts
+                    <input type="checkbox" name="extracurriculars" value="Crafts and DIY">Crafts and DIY
+                    <input type="checkbox" name="extracurriculars" value="Outdoor Activities">Outdoor Activities<br>
+                    <input type="checkbox" name="extracurriculars" value="Exercising">Exercising
+                    <input type="checkbox" name="extracurriculars" value="Food and Culture">Food and Culture
+                    <input type="checkbox" name="extracurriculars" value="Cooking">Cooking
+                    <input type="checkbox" name="extracurriculars" value="Mindfullness">Mindfullness
+                    <input type="checkbox" name="extracurriculars" value="Socializing">Socializing
+                    <input type="checkbox" name="extracurriculars" value="Travel">Travel
+                    <input type="checkbox" name="extracurriculars" value="Technology">Technology
+                    <input type="checkbox" name="extracurriculars" value="Socail Media">Socail Media
+                    <input type="checkbox" name="extracurriculars" value="Gaming">Gaming
+                    <input type="checkbox" name="extracurriculars" value="Film">Film and Movies
+                    <input type="checkbox" name="extracurriculars" value="Leisure">Leisure
+                    <input type="checkbox" name="extracurriculars" value="Shopping">Shopping
+                    <input type="checkbox" name="extracurriculars" value="None">None
+                    <input type="checkbox" name="extracurriculars" value="Other">Other<br><br>                                                                                    
+                    Which of the following non-academic activities is most important to you? <br>
+                    <select name="extracurricularImportant">
+                        <option value="Watching Sports">Watching Sports</option>
+                        <option value="Playing Sports">Playing Sports</option>
+                        <option value="Visual Arts">Visual Arts</option>
+                        <option value="Performing Arts">Performing Arts</option>
+                        <option value="Playing Music">Playing Music</option>
+                        <option value="Concerts">Concerts</option>
+                        <option value="Crafts and DIY">Crafts and DIY</option>
+                        <option value="Outdoor Activities">Outdoor Activities</option>
+                        <option value="Exercising">Exercising</option>
+                        <option value="Food and Culture">Food and Culture</option>
+                        <option value="Cooking">Cooking</option>
+                        <option value="Mindfullness">Mindfullness</option>
+                        <option value="Socializing">Socializing</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Socail Media">Socail Media</option>
+                        <option value="Gaming">Gaming</option>
+                        <option value="Film">Film and Movies</option>
+                        <option value="Leisure">Leisure</option>
+                        <option value="Shopping">Shopping</option>
+                        <option value="None">None</option>
+                        <option value="Other">Other</option>
+                    </select><br><br>
+                    How much do the above non-academic activities influence your interpersonal interactions?<br>
+                    <input class="influence" type="range" name="extracurricularInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountextracurricular.value=extracurricularInfluence.value">                                                       
+                    <output name="amountextracurricular" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+               </fieldset>
+               <br>
+               <fieldset>
+                    <legend>Skills</legend>
+                    Do you have any of the following clinical skills?<br>
+                    <input type="checkbox" name="clinicskills" value="Phlebotomy">Phlebotomy
+                    <input type="checkbox" name="clinicskills" value="Clinical Procedures">Clinical Procedures
+                    <input type="checkbox" name="clinicskills" value="Patient Interviews">Patient Interviews
+                    <input type="checkbox" name="clinicskills" value="Clinical Documentation">Clinical Documentation
+                    <input type="checkbox" name="clinicskills" value="Scribing">Scribing
+                    <input type="checkbox" name="clinicskills" value="Other">Other<br><br>
+                    Are you profecient in any of the following basic scientific research skills?<br>
+                    <input type="checkbox" name="researchskills" value="Molecular Biology Techniques">Molecular Biology Techniques
+                    <input type="checkbox" name="researchskills" value="Cell Culture">Cell Culture
+                    <input type="checkbox" name="researchskills" value="Animal Husbandry">Animal Husbandry
+                    <input type="checkbox" name="researchskills" value="Molecular Cloning and Genetics">Molecular Cloning and Genetics
+                    <input type="checkbox" name="researchskills" value="Molecular Imaging">Molecular Imaging
+                    <input type="checkbox" name="researchskills" value="Organic Chemistry">Organic Chemistry
+                    <input type="checkbox" name="researchskills" value="Inorganic Chemistry">Inorganic Chemistry
+                    <input type="checkbox" name="researchskills" value="Bioengineering">Bioengineering
+                    <input type="checkbox" name="researchskills" value="Other">Other<br><br>
+                    Are you proficient in any of the following computer science skills?<br>
+                    <input type="checkbox" name="techskills" value="Software Engineering">Software Engineering
+                    <input type="checkbox" name="techskills" value="Programming">Programming
+                    <input type="checkbox" name="techskills" value="Database Administration">Database Administration
+                    <input type="checkbox" name="techskills" value="Cloud Management">Cloud Management
+                    <input type="checkbox" name="techskills" value="Statistical Analysis">Statistical Analysis
+                    <input type="checkbox" name="techskills" value="Data Mining Software">Data Mining Software
+                    <input type="checkbox" name="techskills" value="Other">Other<br><br>
+                    Other skills<br>
+                    <input type="checkbox" name="otherskills" value="Grant Writing">Grant Writing
+                    <input type="checkbox" name="otherskills" value="Scientific Writing">Scientific Writing
+                    <input type="checkbox" name="otherskills" value="Manuscript Preparation/Editing">Manuscript Preparation/Editing
+                    <input type="checkbox" name="otherskills" value="Other">Other<br><br>
+                    How important are these skills to your interpersonal interactions?<br>
+                    <input class="influence" type="range" name="skillsInfluence" list="tickmarks" max="10" min="0" step="1"
+                    oninput="amountskills.value=skillsInfluence.value">                                                       
+                    <output name="amountskills" for="rangeInput">5</output><br><br>
+                    <datalist id="tickmarks">
+                        <option value="0">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+                </fieldset>
+                <fieldset id="submit">
+                    <legend>END OF SURVEY</legend>
+                    <input id="submitbutton" type="submit" value="Submit">
+                </fieldset>
+                <br>            
+            </form>
+        </div>
+        <div id='right'></div>
+    </body>
+</html>
