@@ -3,7 +3,7 @@
     <head>
         <title>Wake Compass</title>
         <script src="signup.js"></script>
-        <link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+        <link type="text/css" rel="stylesheet" href="signupStylesheet.css"/>
     </head>
     <body>
         <h1>

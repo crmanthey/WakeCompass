@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Home Page</title>
-        <link type="text/css" rel="stylesheet" href="stylesheet1.css"/>
+        <link type="text/css" rel="stylesheet" href="profilePageStylesheet.css"/>
     </head>
     <body> 
         <?php 
@@ -40,18 +40,26 @@
                 }
                 $sql = "SELECT * FROM profiledata WHERE ID=$ID";
                 $result = mysqli_query($mysqli, $sql);
+                if($result == false){
+
+                } else {
                 $result = mysqli_fetch_assoc($result);
                 return $result;
+                }
             }
         
             session_start();
-            $account = $_SERVER['PATH_INFO'];
-            $account = substr($account, 1);
-            $user = $_SESSION['username'];
-            $activeSession = session_id();
-            $session = $_SESSION['id'];
-            $userSession = sessionData($user);
-            $access = 2;
+            if(isset($_SERVER['PATH_INFO'])){
+                $account = $_SERVER['PATH_INFO'];
+                $account = substr($account, 1);
+                $user = $_SESSION['username'];
+                $activeSession = session_id();
+                $session = $_SESSION['id'];
+                $userSession = sessionData($user);
+                $access = 2;
+            } else {
+                die(header("location:/login.php"));
+            }
             if($activeSession==$userSession and $account==$user){
                 $access = 0;
             } else if(isset($_SESSION['username'])){

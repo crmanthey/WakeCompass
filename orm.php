@@ -329,6 +329,82 @@ class Profile {
       }
 }
 
+class profileData{
+    private $name;
+    private $role;
+    private $age;
+    private $gender;
+    private $race;
+    private $languages;
+    private $hometown;
+    private $clinicalskills;
+    private $researchskills;
+    private $otherskills;
+
+    public static function connect(){
+        return new mysqli("localhost","root", "", "wake_compass");
+    }
+
+    public static function create($name, $role, $age, $gender, $race, 
+    $languages, $hometown, $clinicalskills, $researchskills, $otherskills){
+        
+        $mysqli = profileData::connect();
+
+        $result = $mysqli->query("INSERT INTO Profiles values (
+            '" . $name . "',
+            '" . $role . "',
+            '" . $age . "',
+            '" . $gender . "',
+            '" . $race . "',
+            '" . $languages . "',
+            '" . $hometown. "',
+            '" . $clinicalskills . "',
+            '" . $researchskills . "',
+            '" . $otherskills . "');");
+            
+        if($result){
+            return new profileData($name, $role, $age, $gender, $race, 
+            $languages, $hometown, $clinicalskills, $researchskills, $otherskills)
+        } else {
+            return null;
+        }
+    }
+
+    private function __construct($name, $role, $age, $gender, $race, 
+    $languages, $hometown, $clinicalskills, $researchskills, $otherskills){
+        $this->name = $name;
+        $this->role = $role;
+        $this->age= $age;
+        $this->gender = $gender;
+        $this->race = $race;
+        $this->languages = $languages;
+        $this->hometown = $hometown;
+        $this->clinicalskills = $clinicalskills;
+        $this->researchskills = $researchskills;
+        $this->otherskills = $otherskills;
+    }
+
+    public function getJSON(){
+        $json_obj = array(
+            'name' => $this->name,
+            'role' => $this->role,
+            'age' => $this->age,
+            'gender' => $this->gender,
+            'race' => $this->race,
+            'languages' => $this->languages,
+            'hometown' => $this->hometown,
+            'clinicalskills' => $this->clinicalskills,
+            'researchskills' => $this->researchskills,
+            'otherskills' => $this->otherskills);
+        return json_encode($json_obj);
+    }
+}
+
+class Experiences{
+
+    
+}
+
 
     
 

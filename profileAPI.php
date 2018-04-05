@@ -73,7 +73,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $activities = "";
     if (isset($_REQUEST['activities'])) {
-        $activities = $_REQUEST['activities'];
+        $activitiesArray = $_REQUEST['activities'];
+        $numActivities = count($activitiesArray);
+        for($i=0; $i<$numActivities; $i++){
+            $activities = $activities . $activitiesArray[$i] . ", ";
+        }
     }
     
     $Activity = "";
@@ -128,7 +132,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $language = "";
     if (isset($_REQUEST['language'])) {
-        $language = $_REQUEST['language'];
+        $languagesArray = $_REQUEST['language'];
+        $numLanguages = count($languagesArray);
+        for($i=0; $i<$numLanguages; $i++){
+            $language = $language . $languagesArray[$i] . ", ";
+        }
     }
     
     $religion = "";
@@ -213,7 +221,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $currentpatienttype = "";
     if (isset($_REQUEST['currentpatienttype'])) {
-        $currentpatienttype = $_REQUEST['currentpatienttype'];
+        $patientTypeArray = $_REQUEST['currentpatienttype'];
+        $numPatientTypes = count($patientTypeArray);
+        for($i=0; $i<$numPatientTypes; $i++){
+            $currentpatienttype = $currentpatienttype . $patientTypeArray[$i] . ", ";
+        }
     }
     
     $environmentInfluence = "";
@@ -223,12 +235,20 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $medActivity = "";
     if (isset($_REQUEST['medActivity'])) {
-        $medActivity = $_REQUEST['medActivity'];
+        $medActivityArray = $_REQUEST['medActivity'];
+        $numMedActivity = count($medActivityArray);
+        for($i=0; $i<$numMedActivity; $i++){
+            $medActivity = $medActivity . $medActivityArray[$i] . ", ";
+        }
     }
     
     $currentMedActivity = "";
     if (isset($_REQUEST['currentMedActivity'])) {
-        $currentMedActivity = $_REQUEST['currentMedActivity'];
+        $currentMedActivityArray = $_REQUEST['currentMedActivity'];
+        $numCurrentMedActivity = count($currentMedActivityArray);
+        for($i=0; $i<$numCurrentMedActivity; $i++){
+            $currentMedActivity= $currentMedActivity . $currentMedActivityArray[$i] . ", ";
+        }
     }
     
     $medicalImportant = "";
@@ -248,7 +268,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $scholarship = "";
     if (isset($_REQUEST['scholarship'])) {
-        $scholarship = $_REQUEST['scholarship'];
+        $scholarshipArray = $_REQUEST['scholarship'];
+        $numScholarship = count($scholarshipArray);
+        for($i=0; $i<$numScholarship; $i++){
+            $scholarship = $scholarship . $scholarshipArray[$i] . ", ";
+        }
     }
     
     $scholarshipInfluence = "";
@@ -258,7 +282,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $extracurriculars = "";
     if (isset($_REQUEST['extracurriculars'])) {
-        $extracurriculars = $_REQUEST['extracurriculars'];
+        $extracurricularArray = $_REQUEST['extracurriculars'];
+        $numExtracurriculars = count($extracurricularArray);
+        for($i=0; $i<$numExtracurriculars; $i++){
+            $extracurriculars = $extracurriculars . $extracurricularArray[$i] . ", ";
+        }
     }
     
     $extracurricularImportant = "";
@@ -273,29 +301,46 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
     
     $clinicskills = "";
     if (isset($_REQUEST['clinicskills'])) {
-        $clinicskills = $_REQUEST['clinicskills'];
+        $clinicSkillsArray = $_REQUEST['clinicskills'];
+        $numClinicSkills = count($clinicSkillsArray);
+        for($i=0; $i<$numClinicSkills; $i++){
+            $clinicskills = $clinicskills . $clinicSkillsArray[$i] . ", ";
+        }
     }
     
     $researchskills = "";
     if (isset($_REQUEST['researchskills'])) {
-        $researchskills = $_REQUEST['researchskills'];
+        $researchSkillsArray = $_REQUEST['researchskills'];
+        $numResearchSkills = count($researchSkillsArray);
+        for($i=0; $i<$numResearchSkills; $i++){
+            $researchskills = $researchskills . $researchSkillsArray[$i] . ", ";
+        }
     }
     
     $techskills = "";
     if (isset($_REQUEST['techskills'])) {
-        $techskills = $_REQUEST['techskills'];
+        $techSkillsArray = $_REQUEST['techskills'];
+        $numTechSkills = count($techSkillsArray);
+        for($i=0; $i<$numTechSkills; $i++){
+            $techskills = $techskills . $techSkillsArray[$i] . ", ";
+        }
     }
     
     $otherskills = "";
     if (isset($_REQUEST['otherskills'])) {
-        $otherskills = $_REQUEST['otherskills'];
+        $otherSkillsArray = $_REQUEST['otherskills'];
+        $numOtherSkills = count($otherSkillsArray);
+        for($i=0; $i<$numOtherSkills; $i++){
+            $otherskills = $otherskills . $otherSkillsArray[$i] . ", ";
+        }
     }
     
     $skillsInfluence = "";
     if (isset($_REQUEST['skillsInfluence'])) {
         $skillsInfluence = $_REQUEST['skillsInfluence'];
     }
-    
+   
+
 
     $new_Profile = Profile::create($name, $email, $role, $gradyear, 
     $hometown, $homeEnvironment, $homeInfluence, $degrees, $school, 

@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#ProfileForm').on('submit', function (e) {
         e.preventDefault();
-        $.ajax("Profile.php",
+        $.ajax("profileAPI.php",
             {type: "POST", 
             dataType: "json",
             data: $(this).serialize(),
